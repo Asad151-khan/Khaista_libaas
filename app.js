@@ -592,22 +592,22 @@ function setupEventListeners() {
 // 7. Motion Video Reel Player Logic
 const MOTION_REELS = [
   {
-    image: "assets/products/chiffon_1.jpg",
+    image: "chiffon_1.jpg",
     title: "Blush Chiffon Festive Pret",
     subtitle: "FLAT 30% OFF - PKR 10,150"
   },
   {
-    image: "assets/products/lawn_1.jpg",
+    image: "lawn_1.jpg",
     title: "Emerald Royal Embroidered Lawn",
     subtitle: "FLAT 50% OFF - PKR 4,495"
   },
   {
-    image: "assets/products/velvet_1.jpg",
+    image: "velvet_1.jpg",
     title: "Imperial Navy Velvet Zari Edition",
     subtitle: "FLAT 50% OFF - PKR 8,495"
   },
   {
-    image: "assets/hero_1.jpg",
+    image: "hero_1.jpg",
     title: "Burgundy Bridal Anarkali Gown",
     subtitle: "FLAT 15% OFF - PKR 21,240"
   }
