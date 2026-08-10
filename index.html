@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khaista Libaas | Ethnic & Modern Women's Clothing</title>
+  <meta name="description" content="Shop luxury Pakistani women fashion: Embroidered Lawn 3-Piece, Stitched Pret, Chiffon Festive, and Royal Velvet Collections. Direct WhatsApp ordering: 03439294699.">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-marquee">
+      <span>✨ FREE NATIONWIDE SHIPPING ON ORDERS OVER PKR 5,000 ✨</span>
+      <span style="opacity: 0.5;">|</span>
+      <span>DIRECT WHATSAPP ORDERING: <strong>03439294699</strong></span>
+      <span style="opacity: 0.5;">|</span>
+      <span>INSTAGRAM: <strong>@khaistalibaas.pk</strong></span>
+    </div>
+    <div class="owner-mode-badge" onclick="openOwnerModal()">
+      <i class="fa-solid fa-tags"></i> Owner Sale Panel
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="#" class="brand-logo-wrap">
+        <img src="assets/logo.jpg" alt="Khaista Libaas Logo" class="brand-logo-img">
+        <div class="brand-title-box">
+          <div class="brand-title-main">KHAISTA LIBAAS</div>
+          <div class="brand-subtitle">
+            ETHNIC & MODERN CLOTHING <span class="brand-urdu-script">ښکلي</span>
+          </div>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#" class="nav-link active" onclick="state.activeCategory='all'; renderProducts();">Home</a></li>
+        <li><a href="#catalog" class="nav-link" onclick="state.activeCategory='lawn'; renderProducts();">Lawn '26</a></li>
+        <li><a href="#catalog" class="nav-link" onclick="state.activeCategory='pret'; renderProducts();">Stitched Pret</a></li>
+        <li><a href="#catalog" class="nav-link" onclick="state.activeCategory='unstitched'; renderProducts();">Unstitched 3PC</a></li>
+        <li><a href="#catalog" class="nav-link" onclick="state.activeCategory='chiffon'; renderProducts();">Chiffon Festive</a></li>
+        <li><a href="#catalog" class="nav-link" onclick="state.activeCategory='velvet'; renderProducts();">Velvet Edition</a></li>
+        <li><a href="#catalog" class="nav-link sale-tab" onclick="state.activeCategory='sale'; renderProducts();">🔥 FLAT 50% OFF</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <div class="search-input-wrap">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="search-input" class="search-input" placeholder="Search lawn, pret, silk...">
+        </div>
+
+        <button class="icon-btn" onclick="openCartDrawer()" title="View Bag">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge-count" id="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Carousel Section (Compact & Motion Video Portion) -->
+  <section class="hero-section">
+    <img src="assets/hero_1.jpg" alt="Khaista Libaas Campaign Shoot" class="hero-bg-img">
+    <div class="hero-overlay"></div>
+    <div class="hero-container">
+      
+      <!-- Left Content -->
+      <div class="hero-content">
+        <div class="hero-tag">
+          <i class="fa-solid fa-sparkles"></i> FESTIVE & SUMMER COLLECTION 2026
+        </div>
+        <h1 class="hero-title">
+          Khaista Libaas <span>Ethnic & Modern</span> Clothing
+        </h1>
+        <p class="hero-description">
+          Formal luxury embroidered lawn 3-piece suits, chiffon pret, and velvet shawls. Direct fast ordering to WhatsApp: <strong>03439294699</strong>.
+        </p>
+        <div class="hero-btn-group">
+          <a href="#catalog" class="btn-primary" style="padding: 10px 22px; font-size: 0.85rem;">
+            Explore Clothes <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="https://wa.me/923439294699?text=Hello%20Khaista%20Libaas,%20I%20want%20to%20order." target="_blank" class="btn-whatsapp-direct" style="padding: 10px 20px; font-size: 0.85rem;">
+            <i class="fa-brands fa-whatsapp"></i> Order WhatsApp (03439294699)
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Motion / Video Portion -->
+      <div class="motion-video-box">
+        <div class="motion-live-badge">
+          <span class="live-red-dot"></span> LIVE CAMPAIGN REEL
+        </div>
+        <div class="motion-shimmer-overlay"></div>
+
+        <!-- Dynamic Animated Fashion Reel Slider -->
+        <img id="motion-reel-img" src="assets/products/chiffon_1.jpg" class="motion-video-player" alt="Motion Fashion Showcase">
+
+        <div class="motion-caption-bar">
+          <div>
+            <div class="motion-title-text" id="motion-reel-title">Rose Gold Chiffon Festive Pret</div>
+            <div class="motion-sub-text" id="motion-reel-sub">FLAT 30% OFF - PKR 10,150</div>
+          </div>
+          <div class="motion-controls">
+            <button class="motion-ctrl-btn" onclick="prevMotionReel()" title="Previous Reel"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="motion-ctrl-btn" onclick="toggleMotionPlay()" id="motion-play-btn" title="Pause / Play Reel"><i class="fa-solid fa-pause"></i></button>
+            <button class="motion-ctrl-btn" onclick="nextMotionReel()" title="Next Reel"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Highlight Features Bar -->
+  <section class="features-bar">
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+        <div>
+          <div class="feature-title">Free Nationwide Shipping</div>
+          <div class="feature-sub">On orders over PKR 5,000</div>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-icon"><i class="fa-brands fa-whatsapp"></i></div>
+        <div>
+          <div class="feature-title">Direct WhatsApp Order</div>
+          <div class="feature-sub">Instant receipt to 03439294699</div>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-icon"><i class="fa-solid fa-award"></i></div>
+        <div>
+          <div class="feature-title">100% Original Fabric</div>
+          <div class="feature-sub">Pure Swiss Lawn & Chiffon</div>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-icon"><i class="fa-solid fa-scissors"></i></div>
+        <div>
+          <div class="feature-title">Custom Size Stitching</div>
+          <div class="feature-sub">Tailored to your measurements</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Showcase -->
+  <section class="categories-section">
+    <div class="section-header">
+      <div class="section-subtitle">DESIGNER SELECTIONS</div>
+      <h2 class="section-title">Shop by Category</h2>
+    </div>
+
+    <div class="categories-grid">
+      <div class="category-card" onclick="state.activeCategory='lawn'; renderProducts(); location.href='#catalog';">
+        <img src="assets/products/lawn_1.jpg" class="category-card-img" alt="Lawn Collection">
+        <div class="category-overlay">
+          <div class="category-title">Embroidered Lawn</div>
+          <div class="category-count">Summer Unstitched & Pret</div>
+          <div class="category-link-text">Shop Collection <i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+      </div>
+
+      <div class="category-card" onclick="state.activeCategory='chiffon'; renderProducts(); location.href='#catalog';">
+        <img src="assets/products/chiffon_1.jpg" class="category-card-img" alt="Chiffon Collection">
+        <div class="category-overlay">
+          <div class="category-title">Chiffon Festive</div>
+          <div class="category-count">Wedding & Party Pret</div>
+          <div class="category-link-text">Shop Collection <i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+      </div>
+
+      <div class="category-card" onclick="state.activeCategory='velvet'; renderProducts(); location.href='#catalog';">
+        <img src="assets/products/velvet_1.jpg" class="category-card-img" alt="Velvet Collection">
+        <div class="category-overlay">
+          <div class="category-title">Royal Velvet Shawls</div>
+          <div class="category-count">Winter Micro-Velvet Edition</div>
+          <div class="category-link-text">Shop Collection <i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Catalog Section -->
+  <section class="products-section" id="catalog">
+    <div class="section-header">
+      <div class="section-subtitle">OUR EXCLUSIVE RANGE</div>
+      <h2 class="section-title">Browse Female Clothing</h2>
+    </div>
+
+    <div class="catalog-controls">
+      <div class="filter-tabs">
+        <button class="tab-btn active" data-category="all">All Suits</button>
+        <button class="tab-btn" data-category="lawn">Summer Lawn '26</button>
+        <button class="tab-btn" data-category="pret">Stitched Pret</button>
+        <button class="tab-btn" data-category="unstitched">Unstitched 3-PC</button>
+        <button class="tab-btn" data-category="chiffon">Chiffon Festive</button>
+        <button class="tab-btn" data-category="velvet">Velvet Shawls</button>
+        <button class="tab-btn sale-highlight" data-category="sale">🔥 Special Sales</button>
+      </div>
+
+      <div class="sort-wrap">
+        <label for="sort-select">Sort By:</label>
+        <select id="sort-select" class="sort-select">
+          <option value="featured">Featured Items</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="discount-high">Biggest Discount</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Products Grid (Dynamically Populated) -->
+    <div class="products-grid" id="products-grid"></div>
+  </section>
+
+  <!-- Social Showcase Section -->
+  <section class="social-section">
+    <div class="section-header">
+      <div class="section-subtitle">FOLLOW US ON INSTAGRAM & TIKTOK</div>
+      <h2 class="section-title">@khaistalibaas.pk</h2>
+      <p style="color: var(--text-muted); margin-top: 8px;">Tag us in your photos to get featured on our page!</p>
+    </div>
+
+    <div class="social-grid">
+      <a href="https://instagram.com/khaistalibaas.pk" target="_blank" class="social-card">
+        <img src="assets/hero_1.jpg" alt="Instagram Post">
+        <div class="social-overlay"><i class="fa-brands fa-instagram"></i></div>
+      </a>
+      <a href="https://instagram.com/khaistalibaas.pk" target="_blank" class="social-card">
+        <img src="assets/products/lawn_1.jpg" alt="Instagram Post">
+        <div class="social-overlay"><i class="fa-brands fa-instagram"></i></div>
+      </a>
+      <a href="https://tiktok.com/@khaistalibaas.pk" target="_blank" class="social-card">
+        <img src="assets/products/chiffon_1.jpg" alt="TikTok Video">
+        <div class="social-overlay"><i class="fa-brands fa-tiktok"></i></div>
+      </a>
+      <a href="https://instagram.com/khaistalibaas.pk" target="_blank" class="social-card">
+        <img src="assets/products/velvet_1.jpg" alt="Instagram Post">
+        <div class="social-overlay"><i class="fa-brands fa-instagram"></i></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <div class="footer-grid">
+      <div>
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+          <img src="assets/logo.jpg" alt="Khaista Libaas Logo" style="height:54px; width:auto; border-radius:8px; border:1px solid rgba(197, 155, 108, 0.4);">
+          <div class="footer-brand-title" style="margin-bottom:0;">KHAISTA LIBAAS</div>
+        </div>
+        <p class="footer-desc">
+          Formal and ethnic women's clothing brand crafting timeless embroidered lawn, chiffon pret, and velvet suits. Easy WhatsApp ordering nationwide!
+        </p>
+        <div class="social-icons-row">
+          <a href="https://instagram.com/khaistalibaas.pk" target="_blank" class="social-icon-btn" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://tiktok.com/@khaistalibaas.pk" target="_blank" class="social-icon-btn" title="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+          <a href="https://wa.me/923439294699" target="_blank" class="social-icon-btn" title="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Quick Collections</h4>
+        <ul class="footer-links">
+          <li><a href="#catalog" onclick="state.activeCategory='lawn'; renderProducts();">Summer Lawn 2026</a></li>
+          <li><a href="#catalog" onclick="state.activeCategory='pret'; renderProducts();">Ready-to-Wear Pret</a></li>
+          <li><a href="#catalog" onclick="state.activeCategory='chiffon'; renderProducts();">Chiffon Festive Wear</a></li>
+          <li><a href="#catalog" onclick="state.activeCategory='velvet'; renderProducts();">Velvet Winter Edition</a></li>
+          <li><a href="#catalog" onclick="state.activeCategory='sale'; renderProducts();">Special Sale Offers</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Contact & Ordering</h4>
+        <ul class="footer-links">
+          <li><i class="fa-brands fa-whatsapp" style="color:#25D366; margin-right:8px;"></i> WhatsApp: <strong>03439294699</strong></li>
+          <li><i class="fa-brands fa-instagram" style="color:var(--primary-gold); margin-right:8px;"></i> Instagram: <strong>@khaistalibaas.pk</strong></li>
+          <li><i class="fa-brands fa-tiktok" style="color:#fff; margin-right:8px;"></i> TikTok: <strong>@khaistalibaas.pk</strong></li>
+          <li><i class="fa-solid fa-truck" style="color:var(--primary-gold); margin-right:8px;"></i> Cash on Delivery Available</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Khaista Libaas. All rights reserved. (Ethnic & Modern Clothing - ښکلي)</div>
+      <div>Designed with formal elegance for high-end fashion experience.</div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Chat Button -->
+  <a href="https://wa.me/923439294699?text=Assalamu%20Alaikum%20Khaista%20Libaas!%20I%20want%20to%20place%20an%20order." target="_blank" class="whatsapp-float-btn">
+    <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i>
+    <span>Order on WhatsApp</span>
+  </a>
+
+  <!-- Owner Sale Controller Modal -->
+  <div class="modal-backdrop" id="owner-modal">
+    <div class="modal-box owner-modal-box">
+      <button class="close-modal-btn" onclick="closeOwnerModal()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="owner-modal-header">
+        <h2 class="owner-title"><i class="fa-solid fa-sliders" style="color:var(--primary-gold);"></i> Owner Sale Control Panel</h2>
+        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;">
+          Choose your desired discount rate. Click any offer button below to immediately apply or remove storewide sales!
+        </p>
+      </div>
+
+      <label style="font-weight: 700; font-size: 0.95rem; margin-bottom: 12px; display: block;">1-Click Global Sale Offers:</label>
+      <div class="sale-preset-grid">
+        <button class="preset-sale-btn" onclick="setGlobalOwnerSale(50)">🔥 FLAT 50% OFF</button>
+        <button class="preset-sale-btn" onclick="setGlobalOwnerSale(30)">FLAT 30% OFF</button>
+        <button class="preset-sale-btn" onclick="setGlobalOwnerSale(15)">FLAT 15% OFF</button>
+        <button class="preset-sale-btn" onclick="setGlobalOwnerSale(0)" style="border-color:#7f8c8d; color:#7f8c8d;">Standard Price</button>
+      </div>
+
+      <div style="background: var(--bg-secondary); padding: 16px; border-radius: var(--radius-md); font-size: 0.85rem; color: var(--text-dark);">
+        <i class="fa-solid fa-circle-info" style="color:var(--primary-gold);"></i> 
+        Setting a sale automatically calculates discounted prices across all product cards, displays red sale badges, updates shopping bag totals, and formats your WhatsApp order receipts.
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Slide-out Drawer -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <div class="cart-title"><i class="fa-solid fa-bag-shopping"></i> Shopping Bag</div>
+      <button class="close-modal-btn" onclick="closeCartDrawer()" style="position:static;"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="cart-body" id="cart-drawer-body"></div>
+
+    <div class="cart-footer">
+      <div class="free-shipping-progress">
+        <div id="shipping-text" style="font-size:0.8rem;">Checking free shipping eligibility...</div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="shipping-fill"></div>
+        </div>
+      </div>
+
+      <div class="price-summary-row">
+        <span>Total Discount Savings:</span>
+        <span id="cart-savings" style="color:#c0392b; font-weight:700;">PKR 0</span>
+      </div>
+
+      <div class="price-summary-row total-row">
+        <span>Total Amount:</span>
+        <span id="cart-total" style="color:var(--primary-gold);">PKR 0</span>
+      </div>
+
+      <button class="btn-whatsapp-direct" style="width:100%; justify-content:center; margin-top:16px; font-size:1rem; padding:14px;" onclick="openCheckoutModal()">
+        <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp (03439294699)
+      </button>
+    </div>
+  </div>
+
+  <!-- WhatsApp Checkout Modal -->
+  <div class="modal-backdrop" id="checkout-modal">
+    <div class="modal-box" style="max-width:520px;">
+      <button class="close-modal-btn" onclick="closeCheckoutModal()"><i class="fa-solid fa-xmark"></i></button>
+      <h2 style="font-size: 1.8rem; margin-bottom: 6px;">Customer Order Details</h2>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 20px;">
+        Enter your address below. Clicking confirm will automatically launch WhatsApp to <strong>03439294699</strong> with your receipt.
+      </p>
+
+      <form onsubmit="processWhatsAppCheckout(event)">
+        <div style="margin-bottom: 14px;">
+          <label style="font-weight: 700; font-size: 0.85rem; display: block; margin-bottom: 4px;">Full Name *</label>
+          <input type="text" id="cust-name" required placeholder="e.g. Fatima Khan" style="width: 100%; padding: 10px 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-light); font-size: 0.9rem;">
+        </div>
+
+        <div style="margin-bottom: 14px;">
+          <label style="font-weight: 700; font-size: 0.85rem; display: block; margin-bottom: 4px;">WhatsApp Phone Number *</label>
+          <input type="tel" id="cust-phone" required placeholder="e.g. 0300-1234567" style="width: 100%; padding: 10px 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-light); font-size: 0.9rem;">
+        </div>
+
+        <div style="margin-bottom: 14px;">
+          <label style="font-weight: 700; font-size: 0.85rem; display: block; margin-bottom: 4px;">City *</label>
+          <input type="text" id="cust-city" required placeholder="e.g. Lahore, Karachi, Islamabad..." style="width: 100%; padding: 10px 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-light); font-size: 0.9rem;">
+        </div>
+
+        <div style="margin-bottom: 14px;">
+          <label style="font-weight: 700; font-size: 0.85rem; display: block; margin-bottom: 4px;">Full Delivery Address *</label>
+          <textarea id="cust-address" required rows="2" placeholder="House no, Street name, Area details..." style="width: 100%; padding: 10px 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-light); font-size: 0.9rem; font-family: inherit;"></textarea>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <label style="font-weight: 700; font-size: 0.85rem; display: block; margin-bottom: 4px;">Stitching / Special Instructions (Optional)</label>
+          <input type="text" id="cust-notes" placeholder="e.g. Please stitch sleeve length to 21 inches..." style="width: 100%; padding: 10px 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-light); font-size: 0.9rem;">
+        </div>
+
+        <button type="submit" class="btn-whatsapp-direct" style="width: 100%; justify-content: center; padding: 14px; font-size: 1rem;">
+          <i class="fa-brands fa-whatsapp"></i> Confirm & Open WhatsApp (03439294699)
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div class="modal-backdrop" id="quickview-modal" onclick="if(event.target === this) closeQuickView();">
+    <div class="modal-box" id="quickview-content">
+      <button class="close-modal-btn" onclick="closeQuickView()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </div>
+
+  <!-- JavaScript Files -->
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
